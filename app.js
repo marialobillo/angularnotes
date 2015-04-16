@@ -52,8 +52,8 @@ var app = angular.module('app',[]);
 app.controller('MainController', ['$scope', function($scope) {
   
 	var person = {
-		firstName : "Maria", 
-		lastName : "Lopez", 
+		firstName : "Jhon", 
+		lastName : "Doe", 
 		imageSrc : "https://download.unsplash.com/photo-1426200830301-372615e4ac54"
 	};
 

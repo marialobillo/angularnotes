@@ -8,6 +8,11 @@
 </head>
 <body ng-controller="MainController">
 
-	<h1>{{message}}</h1>
+	<h1>Tienda</h1>
+
+	<ul>
+		<li>Producto 2 {{ 30 | currency }}</li>
+		<li>Producto 1 {{ 50 | currency: "€" }}</li>
+	</ul>
 </body>
 </html>
