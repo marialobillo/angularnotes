@@ -36,7 +36,7 @@ var app = angular.module('app',[]);
 
 
 // 	return {
-// 		job1: task1, 
+// 		job1: task1,
 // 		job2: task2
 // 	};
 // };
@@ -48,12 +48,24 @@ var app = angular.module('app',[]);
 // worker.job2();
 // worker.job2();
 
+app.controller('mycontroller', ['$scope', function($scope){
+
+  $scope.cantidad = 0;
+  $scope.precio = 2.15;
+
+}]);
+
+app.controller('controlador2', ['$scope', function($scope){
+
+  $scope.fruta = "Naranja";
+
+}]);
 
 app.controller('MainController', ['$scope', function($scope) {
-  
+
 	var person = {
-		firstName : "Jhon", 
-		lastName : "Doe", 
+		firstName : "Jhon",
+		lastName : "Doe",
 		imageSrc : "https://download.unsplash.com/photo-1426200830301-372615e4ac54"
 	};
 

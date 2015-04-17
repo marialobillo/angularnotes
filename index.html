@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title>AngularJS Notes
-	</title>
+	<meta charset="utf-8">
+	<title>AngularJS Notes</title>
 	<script type="text/javascript" src="bower_components/angularjs/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
-<body ng-controller="MainController">
+<body>
 
-	<h1>Tienda</h1>
+<div class="container">
+	<div class="row">
+		<h1 class="text-center">Tienda de Fruta</h1>
+		<hr>
+	</div>
+	<div class="row">
+		<div class="col-md-8" ng-controller="mycontroller">
 
-	<ul>
-		<li>Producto 2 {{ 30 | currency }}</li>
-		<li>Producto 1 {{ 50 | currency: "€" }} y {{ 'caracteristicas' | uppercase }}</li>
-	</ul>
+			<h2 class="text-center">Oferta! Mangos 2.15€!!</h2>
+
+			<div class="row">
+
+				<div class="form-group">
+					<label for="cantidad">Cantidad de Mangos:</label>
+					<input type="text" class="form-control" name="cantidad" ng-model="cantidad">
+				</div>
+
+				Precio total: {{ cantidad * precio | currency }}
+			</div>
+
+
+
+
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-8">
+			<div ng-controller="controlador2">
+				Fruta: {{fruta}}
+			</div>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
