@@ -4,21 +4,14 @@
   <meta charset="utf-8">
 	<title>AngularJS Notes</title>
 	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="../bower_components/angular/angular_messages.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular-messages.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
   <div class="container">
     <div ng-controller="mainController">
-      <h1>Hello! Cap 14!</h1>
-      <form class="form" name="myForm">
-        <input type="text" name="myField" ng-model="field" required minlength="5">
-          <div ng-messages="myForm.myField.$error">
-            <div ng-message="required">You did not enter a field</div>
-            <div ng-message="minlength">The value entered is too short</div>
-          </div>
-      </form>
+      
     </div>
   </div>
 </body>
