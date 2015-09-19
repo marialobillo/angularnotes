@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+	<title>AngularJS Notes</title>
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular-messages.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">AngularJS</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div ng-controller="mainController">
+
+      <div class="">
+        <label>What is your twitter handle?</label>
+        <input type="text" ng-model="handle"/>
+      </div>
+
+      <div class="alert" ng-if="handle.length !== characters">
+        Must be 5 characters
+      </div>
+      <div class="alert" ng-show="handle.length === characters">
+        The message is showing
+      </div>
+      <div class="alert" ng-hide="handle.length === characters">
+        Hide
+      </div>
+      <hr>
+
+      <h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+    </div>
+  </div>
+</body>
+</html>
