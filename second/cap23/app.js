@@ -11,11 +11,13 @@ myApp.controller('mainController', ['$scope', function($scope){
   var rulesrequest = new XMLHttpRequest();
   rulesrequest.onreadystatechange = function(){
 
-    $scope.$apply(function(){});
-    if (rulesrequest.readyState == 4 && rulesrequest.status == 200){
-      $scope.rules = JSON.parse(rulesrequest.responseText);
-    }
-  };
+    $scope.$apply(function(){
+      if (rulesrequest.readyState == 4 && rulesrequest.status == 200){
+        $scope.rules = JSON.parse(rulesrequest.responseText);
+      }
+
+    });
+  }
 
   rulesrequest.open("GET", "http://localhost:54765/api", true);
   rulesrequest.send();
