@@ -10,4 +10,10 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
 
   $scope.characters = 5;
 
+  $scope.rules = [
+    { rulername: "Must be 5 characters" },
+    { rulername: "Must not be used elsewhere"},
+    { rulername: "Must be cool"}
+  ];
+
 }]);
