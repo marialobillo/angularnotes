@@ -29,8 +29,15 @@
         <input type="text" ng-model="handle"/>
       </div>
 
-      <div class="alert" ng-class="{ 'alert-warning' : handle.length < characters }" ng-show="handle.length !== characters">
-        Must be 5 characters!
+      <div class="alert" ng-class="{ 'alert-warning' : handle.length < characters,
+          'alert-danger': handle.length > characters }" ng-show="handle.length !== characters">
+
+        <div ng-show="handle.length < characters">
+          You have less than 5 characters
+        </div>
+        <div class="" ng-show="handle.length > characters">
+          YOu have more than 5 characters
+        </div>
       </div>
       <hr>
 
