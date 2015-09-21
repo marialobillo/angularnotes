@@ -1,8 +1,27 @@
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller('mainController', ['$scope', '$location','$log', function($scope, $location, $log){
+myApp.config(function($routeProvider){
 
-  $log.info($location.path());
+  $routeProvider
+
+  .when('/', {
+    templateUrl: 'pages/main.html',
+    controller: 'mainController'
+  })
+
+  .when('/second', {
+    templateUrl: 'pages/second.html',
+    controller: 'secondController'
+  })
+});
+
+myApp.controller('mainController', ['$scope','$log', function($scope, $log){
+
+
+}]);
+
+myApp.controller('secondController', ['$scope','$log', function($scope, $log){
+
 
 }]);
