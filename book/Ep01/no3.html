@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+	<title>AngularJS Notes</title>
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular-messages.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">AngularJS</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div ng-controller="padreController">
+        <button ng-click="logPadre()"
+         name="button">Padre</button>
+         <div ng-controller="hijoController">
+           <button ng-click="logHijo()" name="button">Hijo</button>
+           <div ng-controller="nietoController">
+             <button ng-click="logNieto()" name="button">Nieto</button>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+    function padreController($scope){
+      $scope.padre = 'I am the father';
+      $scope.logPadre = function(){
+        console.log($scope.padre);
+      }
+    }
+
+    function hijoController($scope){
+      $scope.hijo = 'I am the son';
+      $scope.edad = 36;
+      $scope.logHijo = function(){
+        console.log($scope.hijo, $scope.edad);
+      }
+    }
+
+    function nietoController(){
+      $scope.nieto = 'I am the grandson';
+      $scope.edad = 4;
+      $scope.logNieto = function(){
+        console.log($scope.nieto, $scope.edad, $scope.hijo);
+      }
+    }
+
+  </script>
+</body>
+</html>
