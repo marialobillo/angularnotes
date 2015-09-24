@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app>
 <head>
   <meta charset="utf-8">
 	<title>AngularJS Notes</title>
@@ -23,7 +23,14 @@
   </nav>
   <div class="container">
     <div class="row">
-      
+      El contenido de este libro...
+      <input type="checkbox" ng-model="respuesta" >
+      <div ng-hide="respuesta">
+        <h2>Me esforzaré más!</h2>
+      </div>
+      <div ng-show="respuesta">
+        <h2>Congratulations!!</h2>
+      </div>
     </div>
   </div>
 </body>
