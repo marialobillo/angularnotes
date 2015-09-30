@@ -58,3 +58,14 @@ function($scope, $log, $routeParams, nameService){
   });
 
 }]);
+
+
+myApp.directive("searchResult", function(){
+  return {
+    template: '<a href="#" clas="list-group-item">
+    <h4 class="list-group-item-heading">Doe, John</h4>
+    <p class="list-group-item-text">555 Main St., New York, NY 11111</p>
+  </a>',
+    replace: true
+  }
+});
