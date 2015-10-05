@@ -40,13 +40,30 @@ myApp.controller('mainController', ['$scope','$log','nameService', function($sco
     nameService.name = $scope.name;
   });
 
-  $scope.person = {
-    name: 'Jane Doe',
-    address: '555 Main St.',
-    city: 'New York',
-    state: 'NY',
-    zip: '11111'
-  }
+  $scope.people = [
+    {
+      name: 'Jane Doe',
+      address: '555 Main St.',
+      city: 'New York',
+      state: 'NY',
+      zip: '11111'
+    },
+    {
+      name: 'Jhon Doe',
+      address: '555 Second St.',
+      city: 'Buffalo',
+      state: 'NY',
+      zip: '2222'
+    },
+    {
+      name: 'Peter Doe',
+      address: '333 Third St.',
+      city: 'Miami',
+      state: 'FL',
+      zip: '33333'
+    }
+
+  ];
 
   $scope.formattedAddress = function(person){
 
