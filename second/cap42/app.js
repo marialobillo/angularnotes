@@ -38,15 +38,23 @@ weatherApp.controller('homeController', ['$scope','cityService', function($scope
 weatherApp.controller('forecastController', ['$scope','cityService','$resource', function($scope, $cityService, $resource){
 
   $scope.city = $cityService.city;
-  
+
   $scope.weatherApp = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {
     callback: "JSON_CALLBACK"
   },
   {
     get: { method: "JSONP" }
   });
-  $scope.weatherResult = $scope.weatherAPI.get({ q: $scope.city, cnt: 2});
+  $scope.weatherResult = $scope.weatherApp.get({ q: $scope.city, cnt: 2});
 
-  console.log($scope.weatherResult);
 
+  $scope.converToCelsius = function(degK){
+
+    return Math.round(1.8 * (degK - 273));
+  }
+
+  $scope.convertToDate = function(dt){
+
+    return new Date(dt * 1000);
+  }
 }]);
