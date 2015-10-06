@@ -44,7 +44,7 @@ weatherApp.controller('forecastController', ['$scope','cityService','$resource',
 
   $scope.city = $cityService.city;
 
-  $scope.days = $routeParams.days || 2;
+  $scope.days = $routeParams.days || '2';
 
   $scope.weatherApp = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {
     callback: "JSON_CALLBACK"
@@ -65,3 +65,16 @@ weatherApp.controller('forecastController', ['$scope','cityService','$resource',
     return new Date(dt * 1000);
   }
 }]);
+
+// Directives
+weatherApp.directive("weatherReport", function(){
+
+  return {
+    restrict: 'E',
+    templateUrl: 'directives/weatherReport.html',
+    replace: true,
+    scope: {
+      
+    }
+  }
+});
