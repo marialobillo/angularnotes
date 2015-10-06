@@ -15,6 +15,10 @@ weatherApp.config(function($routeProvider){
     templateUrl: 'pages/forecast.htm',
     controller: 'forecastController'
   })
+  .when('/forecast/:days',{
+    templateUrl: 'pages/forecast.htm',
+    controller: 'forecastController'
+  })
 
 });
 
@@ -35,9 +39,12 @@ weatherApp.controller('homeController', ['$scope','cityService', function($scope
   });
 }]);
 
-weatherApp.controller('forecastController', ['$scope','cityService','$resource', function($scope, $cityService, $resource){
+weatherApp.controller('forecastController', ['$scope','cityService','$resource','$routeParams',
+  function($scope, $cityService, $resource, $routeParams){
 
   $scope.city = $cityService.city;
+
+  $scope.days = $routeParams.days || 2;
 
   $scope.weatherApp = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {
     callback: "JSON_CALLBACK"
@@ -45,7 +52,7 @@ weatherApp.controller('forecastController', ['$scope','cityService','$resource',
   {
     get: { method: "JSONP" }
   });
-  $scope.weatherResult = $scope.weatherApp.get({ q: $scope.city, cnt: 2});
+  $scope.weatherResult = $scope.weatherApp.get({ q: $scope.city, cnt: $scope.days});
 
 
   $scope.converToCelsius = function(degK){
