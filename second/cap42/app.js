@@ -18,12 +18,20 @@ weatherApp.config(function($routeProvider){
 
 });
 
+// services
+weatherApp.service('cityService', function(){
+
+  this.city = "New York, NY";
+});
+
 // controllers
 
-weatherApp.controller('homeController', ['$scope', function($scope){
+weatherApp.controller('homeController', ['$scope','cityService', function($scope, $cityService){
 
+  $scope.city = cityService.city;
 }]);
 
-weatherApp.controller('forecastController', ['$scope', function($scope){
+weatherApp.controller('forecastController', ['$scope','cityService', function($scope, $cityService){
 
+  $scope.city = cityService.city;
 }]);
