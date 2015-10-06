@@ -11,7 +11,7 @@ Days: <a href="#/forecast/2" ng-class="{ 'bg-primary': days === '2' }">2</a> |
 <div ng-repeat="w in weatherResult.list">
   <div class="row">
     <div class="col-md-12">
-      
+      <weather-report weather-day="w"></weather-report>
     </div>
   </div>
 </div>
