@@ -13,6 +13,15 @@
           <option value="">Pick a filling</option>
         </select>
       </div>
+      <div class="form-group">
+        <label for="">Extras</label>
+        <div class="checkbox" ng-repeat="extra in extras">
+          <label>
+            <input type="checkbox" ng-model="extra.checked" />
+            {{ extra.name }}
+          </label>
+        </div>
+      </div>
       <button class="btn btn-primary">Submit</button>
     </form>
   </div>
@@ -24,6 +33,9 @@
         <tr ng-repeat="taco in tacos">
           <td>{{ taco.name }}</td>
           <td>{{ taco.filling }}</td>
+          <td>
+            <span ng-repeat="extra in taco.extras">{{ extra }}</span>
+          </td>
         </tr>
       </tbody>
     </table>
